@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livre de Recettes — Recetas de Familia</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Georgia, serif; background: #faf8f5; color: #2c2c2c; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,0.97); border-bottom: 1px solid #e0d8cc;
+      padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    nav .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; gap: 8px;
+      overflow-x: auto; padding: 10px 0;
+      scrollbar-width: none;
+    }
+    nav .nav-inner::-webkit-scrollbar { display: none; }
+    nav a {
+      white-space: nowrap; font-size: 12px; color: #6b5c4e;
+      text-decoration: none; padding: 4px 10px;
+      border-radius: 20px; border: 1px solid #d5c9bc;
+      transition: all 0.2s;
+    }
+    nav a:hover { background: #6b5c4e; color: white; }
+    nav .nav-title { font-weight: bold; font-size: 13px; color: #2c2c2c; margin-right: 8px; white-space: nowrap; }
+
+    /* HEADER */
+    header {
+      text-align: center; padding: 120px 20px 40px;
+    }
+    header h1 { font-size: 2.2em; letter-spacing: 2px; color: #2c2c2c; }
+    header p { color: #888; margin-top: 8px; font-style: italic; font-size: 1.1em; }
+
+    /* SECTIONS */
+    .section { max-width: 1100px; margin: 0 auto 60px; padding: 0 20px; }
+    .section h2 {
+      font-size: 1.1em; letter-spacing: 3px; text-transform: uppercase;
+      color: #9c7c5c; border-bottom: 1px solid #e0d8cc;
+      padding-bottom: 10px; margin-bottom: 24px;
+    }
+
+    /* GRID */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+    .recipe-card {
+      background: white; border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .recipe-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .recipe-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .recipe-card .placeholder {
+      width: 100%; height: 200px; background: #f0ebe4;
+      display: flex; align-items: center; justify-content: center;
+      color: #bbb; font-size: 2em;
+    }
+    .recipe-card .info { padding: 14px 16px; }
+    .recipe-card .number { font-size: 11px; color: #bbb; font-family: monospace; }
+    .recipe-card .name { font-size: 15px; font-weight: bold; margin-top: 4px; color: #2c2c2c; }
+
+    footer { text-align: center; padding: 40px; color: #bbb; font-size: 12px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-title">❦ Recetas</span>
+    <a href="#aperitivos">Aperitivos</a>
+    <a href="#sopas-frias">Sopas Frías</a>
+    <a href="#quiches">Quiches</a>
+    <a href="#sopas-calientes">Sopas Calientes</a>
+    <a href="#fondos">Platos de Fondo</a>
+    <a href="#postres">Postres</a>
+  </div>
+</nav>
+
+<header>
+  <h1>❦ Livre de Recettes ❧</h1>
+  <p>Recetas de Familia</p>
+</header>
+
+<!-- I. APERITIVOS -->
+<div class="section" id="aperitivos">
+  <h2>I. Aperitivos y Crackers</h2>
+  <div class="grid">
+    <div class="recipe-card" id="r005">
+      <img src="images/005-crackers-mijo-quinoa.png" alt="Crackers de mijo y quinoa">
+      <div class="info"><div class="number">#005</div><div class="name">Crackers de mijo y quinoa</div></div>
+    </div>
+    <div class="recipe-card" id="r006">
+      <img src="images/006-crackers-mijo-arroz.png" alt="Crackers de mijo y arroz">
+      <div class="info"><div class="number">#006</div><div class="name">Crackers de mijo y arroz</div></div>
+    </div>
+    <div class="recipe-card" id="r007">
+      <img src="images/007-pebre-chileno.png" alt="Pebre chileno">
+      <div class="info"><div class="number">#007</div><div class="name">Pebre chileno</div></div>
+    </div>
+    <div class="recipe-card" id="r008">
+      <img src="images/008-roule-papa-palta.png" alt="Roulé de papa y palta">
+      <div class="info"><div class="number">#008</div><div class="name">Roulé de papa y palta</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- II. SOPAS FRÍAS -->
+<div class="section" id="sopas-frias">
+  <h2>II. Sopas Frías y Ensaladas</h2>
+  <div class="grid">
+    <div class="recipe-card"><div class="placeholder">🥗</div><div class="info"><div class="number">#009</div><div class="name">Coleslaw</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥗</div><div class="info"><div class="number">#010</div><div class="name">Ensalada papas mayo</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🌽</div><div class="info"><div class="number">#011</div><div class="name">Ensalada de choclo con mayo y ciboulette</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥗</div><div class="info"><div class="number">#012</div><div class="name">Ensalada chilena</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥗</div><div class="info"><div class="number">#013</div><div class="name">Ensalada de endivias</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍄</div><div class="info"><div class="number">#014</div><div class="name">Ceviche de champiñones</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🫘</div><div class="info"><div class="number">#015</div><div class="name">Ensalada de lentejas/garbanzos</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥗</div><div class="info"><div class="number">#016</div><div class="name">Ensalada de arroz/pasta</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🌾</div><div class="info"><div class="number">#017</div><div class="name">Ensalada de mijo/quinoa</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🌿</div><div class="info"><div class="number">#018</div><div class="name">Tabbouleh</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥦</div><div class="info"><div class="number">#019</div><div class="name">Ensalada de brócoli con vinagre y miel</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍅</div><div class="info"><div class="number">#020</div><div class="name">Gazpacho de tomate</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍅</div><div class="info"><div class="number">#021</div><div class="name">Salmorejo</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍅</div><div class="info"><div class="number">#022</div><div class="name">Gazpacho andaluz</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍉</div><div class="info"><div class="number">#023</div><div class="name">Gazpacho de tomate y sandía</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥒</div><div class="info"><div class="number">#024</div><div class="name">Sopa fría de pepino y yogurt</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍈</div><div class="info"><div class="number">#025</div><div class="name">Sopa fría de melón y menta</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥕</div><div class="info"><div class="number">#026</div><div class="name">Sopa fría de zanahoria y jengibre</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🎃</div><div class="info"><div class="number">#027</div><div class="name">Sopa fría de zapallo y yogurt</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥑</div><div class="info"><div class="number">#028</div><div class="name">Sopa fría de palta y limón</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🫚</div><div class="info"><div class="number">#029</div><div class="name">Sopa fría de remolacha</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🧄</div><div class="info"><div class="number">#030</div><div class="name">Ajoblanco</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥗</div><div class="info"><div class="number">#031</div><div class="name">Coleslaw con pasas rubias y maní</div></div></div>
+  </div>
+</div>
+
+<!-- III. QUICHES -->
+<div class="section" id="quiches">
+  <h2>III. Quiches, Queques y Tartas Salados</h2>
+  <div class="grid">
+    <div class="recipe-card"><div class="placeholder">🫛</div><div class="info"><div class="number">#032</div><div class="name">Cake courgette, lardon et fromage de chèvre</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥧</div><div class="info"><div class="number">#033</div><div class="name">Quiche Lorraine</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥧</div><div class="info"><div class="number">#034</div><div class="name">Pain de légumes aux couleurs d'été</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🧀</div><div class="info"><div class="number">#035</div><div class="name">Soufflé au fromage</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥧</div><div class="info"><div class="number">#036</div><div class="name">Base universal para quiches y tartas</div></div></div>
+  </div>
+</div>
+
+<!-- IV. SOPAS CALIENTES -->
+<div class="section" id="sopas-calientes">
+  <h2>IV. Sopas y Cremas Calientes</h2>
+  <div class="grid">
+    <div class="recipe-card"><div class="placeholder">🥕</div><div class="info"><div class="number">#037</div><div class="name">Soupe de carottes au lait de coco</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥬</div><div class="info"><div class="number">#038</div><div class="name">Potage poireaux et pomme de terre</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥣</div><div class="info"><div class="number">#039</div><div class="name">Sopa de verduras</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍄</div><div class="info"><div class="number">#040</div><div class="name">Velouté de champiñones</div></div></div>
+  </div>
+</div>
+
+<!-- V. FONDOS -->
+<div class="section" id="fondos">
+  <h2>V. Platos de Fondo</h2>
+  <div class="grid">
+    <div class="recipe-card" id="r001">
+      <img src="images/001-lasagna.png" alt="Lasaña con carne de soya">
+      <div class="info"><div class="number">#041</div><div class="name">Lasaña con carne de soya</div></div>
+    </div>
+    <div class="recipe-card"><div class="placeholder">🍚</div><div class="info"><div class="number">#042</div><div class="name">Arroz especiado con pasas y castañas de cajú</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🫘</div><div class="info"><div class="number">#043</div><div class="name">Tajine de verduras con garbanzos</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥦</div><div class="info"><div class="number">#044</div><div class="name">Verduras de verano con garbanzos</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🫘</div><div class="info"><div class="number">#045</div><div class="name">Dahl de lentejas</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍔</div><div class="info"><div class="number">#046</div><div class="name">Hamburguesas de lentejas</div></div></div>
+    <div class="recipe-card" id="r003">
+      <img src="images/003-falafel-tomates-confitados.png" alt="Falafel con tomates confitados">
+      <div class="info"><div class="number">#047</div><div class="name">Falafel con tomates confitados</div></div>
+    </div>
+    <div class="recipe-card"><div class="placeholder">🍕</div><div class="info"><div class="number">#048</div><div class="name">Pizza con masa de coliflor</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥒</div><div class="info"><div class="number">#049</div><div class="name">Lasagnes aux courgettes et au chèvre</div></div></div>
+    <div class="recipe-card" id="r004">
+      <img src="images/004-ratatouille.png" alt="Ratatouille">
+      <div class="info"><div class="number">#050</div><div class="name">Ratatouille</div></div>
+    </div>
+    <div class="recipe-card"><div class="placeholder">🫘</div><div class="info"><div class="number">#051</div><div class="name">Lentejas</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍚</div><div class="info"><div class="number">#052</div><div class="name">Risotto</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🌶️</div><div class="info"><div class="number">#053</div><div class="name">Chile sin carne</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥔</div><div class="info"><div class="number">#054</div><div class="name">Puré de papas</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥔</div><div class="info"><div class="number">#055</div><div class="name">Gratin de pommes de terre</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🫓</div><div class="info"><div class="number">#056</div><div class="name">Tortillas varias</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍳</div><div class="info"><div class="number">#057</div><div class="name">Shakshuka</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥘</div><div class="info"><div class="number">#058</div><div class="name">Charquicán vegetariano</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥟</div><div class="info"><div class="number">#059</div><div class="name">Empanadas de pino</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥔</div><div class="info"><div class="number">#060</div><div class="name">Gratin dauphinois</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥒</div><div class="info"><div class="number">#061</div><div class="name">Gratin de courgettes</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥧</div><div class="info"><div class="number">#062</div><div class="name">Tarte aux légumes</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍗</div><div class="info"><div class="number">#063</div><div class="name">Poulet rôti</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥩</div><div class="info"><div class="number">#064</div><div class="name">Boeuf bourguignon</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🌭</div><div class="info"><div class="number">#065</div><div class="name">Saucisses lentilles</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🌽</div><div class="info"><div class="number">#066</div><div class="name">Pastel de choclo</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🌽</div><div class="info"><div class="number">#067</div><div class="name">Humitas</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥔</div><div class="info"><div class="number">#068</div><div class="name">Pastel de papas</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🫓</div><div class="info"><div class="number">#069</div><div class="name">Tortilla chilena</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥬</div><div class="info"><div class="number">#070</div><div class="name">Torta pascualina de crepes</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍝</div><div class="info"><div class="number">#071</div><div class="name">Gratín de pasta con verduras</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍛</div><div class="info"><div class="number">#072</div><div class="name">Curry suave de verduras</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🌽</div><div class="info"><div class="number">#073</div><div class="name">Humitas chilenas tradicionales</div></div></div>
+  </div>
+</div>
+
+<!-- VI. POSTRES -->
+<div class="section" id="postres">
+  <h2>VI. Postres</h2>
+  <div class="grid">
+    <div class="recipe-card"><div class="placeholder">🥛</div><div class="info"><div class="number">#074</div><div class="name">Yogurt natural casero</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥛</div><div class="info"><div class="number">#075</div><div class="name">Yogurt de castañas de cajú y fruta</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🎃</div><div class="info"><div class="number">#076</div><div class="name">Pancakes de calabaza</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍫</div><div class="info"><div class="number">#077</div><div class="name">Fondant au chocolat</div></div></div>
+    <div class="recipe-card" id="r002">
+      <img src="images/002-mousse-menta.png" alt="Mousse de menta">
+      <div class="info"><div class="number">#078</div><div class="name">Mousse au chocolat / Mousse de menta</div></div>
+    </div>
+    <div class="recipe-card"><div class="placeholder">🍫</div><div class="info"><div class="number">#079</div><div class="name">Truffe géante</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍫</div><div class="info"><div class="number">#080</div><div class="name">Coulant tiède au chocolat</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍫</div><div class="info"><div class="number">#081</div><div class="name">Roses des sables au chocolat</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍐</div><div class="info"><div class="number">#082</div><div class="name">Tarte aux poires et chocolat</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍋</div><div class="info"><div class="number">#083</div><div class="name">Tarte au citron meringuée</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍓</div><div class="info"><div class="number">#084</div><div class="name">Tarte aux fraises</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🫐</div><div class="info"><div class="number">#085</div><div class="name">Far breton aux pruneaux</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍒</div><div class="info"><div class="number">#086</div><div class="name">Clafoutis</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍓</div><div class="info"><div class="number">#087</div><div class="name">Vosgienne / Forêt noire aux framboises</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍎</div><div class="info"><div class="number">#088</div><div class="name">Tarte aux pommes</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍋</div><div class="info"><div class="number">#089</div><div class="name">Crème de citron (lemon curd)</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍎</div><div class="info"><div class="number">#090</div><div class="name">Gâteau aux pommes facile</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍬</div><div class="info"><div class="number">#091</div><div class="name">Merenguitos</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍪</div><div class="info"><div class="number">#092</div><div class="name">Petits biscuits de Noël</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🥞</div><div class="info"><div class="number">#093</div><div class="name">Pancakes à l'américaine</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍞</div><div class="info"><div class="number">#094</div><div class="name">Pain d'épices</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍮</div><div class="info"><div class="number">#095</div><div class="name">Flan pâtissier traditionnel</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍮</div><div class="info"><div class="number">#096</div><div class="name">Panna cotta</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍚</div><div class="info"><div class="number">#097</div><div class="name">Riz au lait</div></div></div>
+    <div class="recipe-card"><div class="placeholder">☕</div><div class="info"><div class="number">#098</div><div class="name">Tiramisu</div></div></div>
+    <div class="recipe-card"><div class="placeholder">☕</div><div class="info"><div class="number">#099</div><div class="name">Tiramisu aux speculoos</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍮</div><div class="info"><div class="number">#100</div><div class="name">Crème brûlée</div></div></div>
+    <div class="recipe-card"><div class="placeholder">🍷</div><div class="info"><div class="number">#101</div><div class="name">Sémola con vino</div></div></div>
+  </div>
+</div>
+
+<footer>❦ Livre de Recettes — Recetas de Familia ❧</footer>
+
+</body>
+</html>
